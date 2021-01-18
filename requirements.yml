@@ -1,0 +1,5 @@
+- name: ansible-assignment
+  scm: git
+  src: https://github.com/sumitguptainfo/ansible-201.git
+  version: v1
+  

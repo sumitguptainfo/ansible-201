@@ -1,0 +1,27 @@
+---
+# vars file for roles/security
+UBUNTU_COMMON_ROOT_PASSWORD: 12345
+UBUNTU_COMMON_DEPLOY_PASSWORD: 12345
+UBUNTU_COMMON_LOGWATCH_EMAIL: email@gmail.com
+ubuntu_common_deploy_user_name: deploy
+ubuntu_common_deploy_public_keys:
+  - ssh/sumit.pub
+
+ubuntu_common_required_packages:
+  - ufw
+  - fail2ban
+  - unattended-upgrades
+  - logwatch
+
+ubuntu_common_optional_packages:
+  - mosh
+  - vim
+
+ubuntu_allow_port:
+  - 22
+  - 80
+  - 8080
+  - 3306
+ubuntu_common_ssh_port: 22
+ubuntu_common_mosh_from_port: 1
+ubuntu_common_mosh_to_port: 60010

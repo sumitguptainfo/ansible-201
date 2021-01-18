@@ -1,0 +1,17 @@
+---
+- name: excuting the operation
+  hosts: linux
+  become: yes
+  become_method: sudo
+  
+  roles:
+  - reboots
+
+- name: excuting the operation
+  hosts: ubuntu
+  become: yes
+  become_method: sudo
+
+  roles:
+  - security
+

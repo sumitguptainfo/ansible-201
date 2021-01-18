@@ -1,0 +1,13 @@
+---
+- name: Deploy html page
+  hosts: ubuntu
+  become: true
+  vars:
+    ansistrano_deploy_from: "{{ playbook_dir }}/app/"
+    ansistrano_deploy_to: "/var/www/html"
+    ansistrano_keep_releases: 3
+    # There seems to be an issue with rsync in vagrant
+    ansistrano_deploy_via: copy
+    ansistrano_before_setup_tasks_file: "{{ playbook_dir }}/apache.yaml"
+  roles:
+    - { role: ansistrano.deploy }
